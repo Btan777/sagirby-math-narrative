@@ -488,6 +488,10 @@
             align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .price-tag {
@@ -513,60 +517,59 @@
             margin-left: 0.5rem;
         }
 
+        /* SIMPLIFIED WORKING BUTTONS */
         .quest-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-        }
-
-        .quest-buy-btn, .quest-preview-btn {
-            padding: 1rem 2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            z-index: 100;
-        }
-
-        .quest-buy-btn:hover, .quest-preview-btn:hover {
-            cursor: pointer;
+            justify-content: center;
+            align-items: center;
         }
 
         .quest-buy-btn {
             background: linear-gradient(45deg, #e74c3c, #c0392b);
             color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+            text-align: center;
         }
 
         .quest-buy-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
-        }
-
-        .quest-buy-btn:active {
-            transform: translateY(0px);
         }
 
         .quest-preview-btn {
             background: transparent;
             color: #8e44ad;
             border: 2px solid #8e44ad;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .quest-preview-btn:hover {
             background: #8e44ad;
             color: white;
-            transform: translateY(-2px);
-        }
-
-        .quest-preview-btn:active {
-            transform: translateY(0px);
+            transform: translateY(-3px);
         }
 
         .quest-guarantee {
@@ -777,13 +780,13 @@
             }
             
             .quest-buttons {
-                justify-content: center;
+                flex-direction: column;
                 width: 100%;
             }
             
             .quest-buy-btn, .quest-preview-btn {
-                flex: 1;
-                min-width: 150px;
+                width: 90%;
+                text-align: center;
             }
         }
 
@@ -892,171 +895,4 @@
                     </div>
                     <div class="about-image">
                         🧙‍♂️📚✨
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quest Shop Section -->
-<section id="quest-shop" class="section quest-shop">
-    <div class="container">
-        <h2>🗡️ Quest Shop - Available Now!</h2>
-        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #ecf0f1;">
-            Begin your mathematical adventure with Rickard's first legendary worksheets!
-        </p>
-        
-        <div class="quest-items">
-            <div class="quest-item">
-                <div class="quest-item-header">
-                    <div class="quest-badge">🏆 New Quest</div>
-                    <h3>Mathematical Quest Starter Pack</h3>
-                    <p class="quest-subtitle">Two Epic Versions • Beginner & Advanced</p>
-                </div>
-                
-                <div class="quest-item-body">
-                    <div class="quest-preview">
-                        <div class="preview-scroll">
-                            <h4>📜 What's Inside Your Quest Pack:</h4>
-                            <ul class="quest-contents">
-                                <li>🌟 <strong>Beginner's Quest:</strong> Perfect for young adventurers starting their mathematical journey</li>
-                                <li>⚔️ <strong>Advanced Quest:</strong> For seasoned heroes ready for greater challenges</li>
-                                <li>🗺️ <strong>Story-driven problems</strong> that make math feel like an adventure</li>
-                                <li>🎯 <strong>Clear instructions</strong> and step-by-step guidance</li>
-                                <li>✨ <strong>Beautiful adventure-themed design</strong> that engages learners</li>
-                                <li>📚 <strong>Printable PDF format</strong> for easy use at home or school</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="quest-pricing">
-                        <div class="price-tag">
-                            <span class="currency">$</span>
-                            <span class="amount">9.99</span>
-                            <span class="description">Complete Quest Pack</span>
-                        </div>
-                        
-                        <!-- SIMPLIFIED WORKING BUTTONS -->
-                        <div class="quest-buttons">
-                            <!-- Method 1: Direct link buttons (most reliable) -->
-                            <a href="https://gumroad.com/l/your-math-quest-pack" 
-                               target="_blank" 
-                               class="quest-buy-btn-link"
-                               style="background: linear-gradient(45deg, #e74c3c, #c0392b); 
-                                      color: white; 
-                                      padding: 15px 25px; 
-                                      border-radius: 50px; 
-                                      text-decoration: none; 
-                                      margin: 10px; 
-                                      display: inline-block;
-                                      font-weight: 600;
-                                      text-transform: uppercase;
-                                      letter-spacing: 0.5px;
-                                      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-                                      transition: all 0.3s ease;
-                                      cursor: pointer;">
-                                🛒 Start Quest - Buy Now
-                            </a>
-                            
-                            <!-- Method 2: Simple button with alert (for preview) -->
-                            <button onclick="showPreview()" 
-                                    class="quest-preview-btn-simple"
-                                    style="background: transparent; 
-                                           color: #8e44ad; 
-                                           border: 2px solid #8e44ad;
-                                           padding: 15px 25px; 
-                                           border-radius: 50px; 
-                                           margin: 10px; 
-                                           font-weight: 600;
-                                           text-transform: uppercase;
-                                           letter-spacing: 0.5px;
-                                           cursor: pointer;
-                                           transition: all 0.3s ease;">
-                                👁️ Preview Quest
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="quest-guarantee">
-            <div class="guarantee-badge">
-                <span class="guarantee-icon">🛡️</span>
-                <div class="guarantee-text">
-                    <strong>Hero's Guarantee</strong>
-                    <p>Not satisfied with your quest? Get your gold back within 30 days!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Add this CSS for hover effects -->
-<style>
-.quest-buy-btn-link:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6) !important;
-}
-
-.quest-preview-btn-simple:hover {
-    background: #8e44ad !important;
-    color: white !important;
-    transform: translateY(-3px) !important;
-}
-
-.quest-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .quest-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .quest-buy-btn-link,
-    .quest-preview-btn-simple {
-        width: 90%;
-        text-align: center;
-    }
-}
-</style>
-
-<!-- Add this simple JavaScript -->
-<script>
-function showPreview() {
-    alert('🔍 Preview Available Soon!\n\n📚 Sample Quest Content:\n• Story-based math problems\n• Adventure-themed worksheets\n• Step-by-step solutions\n• Beginner & Advanced versions\n\nReplace this with your actual preview PDF link!');
-    
-    // When you have a real preview PDF, replace the alert above with:
-    // window.open('path/to/your/preview.pdf', '_blank');
-}
-
-// Add some visual feedback
-document.addEventListener('DOMContentLoaded', function() {
-    const buyButton = document.querySelector('.quest-buy-btn-link');
-    const previewButton = document.querySelector('.quest-preview-btn-simple');
-    
-    if (buyButton) {
-        buyButton.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    }
-    
-    if (previewButton) {
-        previewButton.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    }
-});
-</script>
+                    </div
