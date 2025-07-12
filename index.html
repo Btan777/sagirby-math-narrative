@@ -699,52 +699,50 @@
             font-size: 1.2rem;
         }
 
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+        /* Guild Section */
+        .guild-section {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             color: white;
-            text-align: center;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,0 Q600,100 1200,0 L1200,600 L0,600 Z" fill="rgba(243,156,18,0.05)"/></svg>');
-            background-size: cover;
-        }
-
-        .footer-content {
+        .guild-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 10;
+            margin: 3rem 0;
         }
 
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #f39c12;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .footer-section a {
-            color: #bdc3c7;
-            text-decoration: none;
+        .guild-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: #f39c12;
-            transform: translateX(5px);
+        .guild-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .guild-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .guild-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .guild-card a {
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         /* Responsive Design */
@@ -787,6 +785,10 @@
             .quest-buy-btn, .quest-preview-btn {
                 width: 90%;
                 text-align: center;
+            }
+
+            .guild-cards {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -833,13 +835,13 @@
 
     <header>
         <nav class="container">
-            <a href="#" class="logo">🏰 Math Quest Hub</a>
+            <a href="#home" class="logo">🏰 Math Quest Hub</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Quest</a></li>
                 <li><a href="#quest-shop">Shop</a></li>
                 <li><a href="#products">Adventures</a></li>
-                <li><a href="#contact">Guild</a></li>
+                <li><a href="#guild">Guild</a></li>
             </ul>
         </nav>
     </header>
@@ -848,7 +850,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Epic Mathematical Adventures</h1>
-                <p>Join Rickard & Tan's Quest <span class="quest-marker">🗡️</span> Where Numbers Become Legends</p>
+                <p class="subtitle">Join Rickard & Tan's Quest <span class="quest-marker">🗡️</span> Where Numbers Become Legends</p>
                 <p>Embark on extraordinary journeys through the realm of mathematics, where every equation tells a story and every problem is a quest waiting to be conquered!</p>
                 <div class="cta-buttons">
                     <a href="#quest-shop" class="btn btn-primary">Start Your Quest</a>
@@ -884,15 +886,278 @@
 
         <section id="about" class="section about">
             <div class="container">
-                <h2>The Legend of Rickard</h2>
+                <h2>The Legend of Rickard & Tan</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>In the mystical realm of mathematical learning, there lived a legendary storyteller named Rickard Sagirby. Armed with the ancient art of narrative magic, he discovered that every mathematical concept harbored a hidden story waiting to be unleashed.</p>
+                        <p>In the mystical realm of mathematical learning, there lived two legendary storytellers named Rickard Sagirby and Tan. Armed with the ancient art of narrative magic, they discovered that every mathematical concept harbored a hidden story waiting to be unleashed.</p>
                         
-                        <p>Rickard's quest began when he realized that traditional mathematics education was like a treasure map written in an unknown language. He forged a new path, transforming abstract numbers into living characters, equations into epic adventures, and problem-solving into heroic journeys.</p>
+                        <p>Their quest began when they realized that traditional mathematics education was like a treasure map written in an unknown language. Together, they forged a new path, transforming abstract numbers into living characters, equations into epic adventures, and problem-solving into heroic journeys.</p>
                         
-                        <p>Now, adventurers from across the mathematical kingdoms gather to join his guild, where learning becomes an epic quest and every student becomes the hero of their own mathematical story.</p>
+                        <p>Now, adventurers from across the mathematical kingdoms gather to join their guild, where learning becomes an epic quest and every student becomes the hero of their own mathematical story.</p>
                     </div>
                     <div class="about-image">
-                        🧙‍♂️📚✨
-                    </div
+                        🧙‍♂️👨‍🎓📚✨
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quest Shop Section -->
+        <section id="quest-shop" class="section quest-shop">
+            <div class="container">
+                <h2>🗡️ Quest Shop - Available Now!</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #ecf0f1;">
+                    Begin your mathematical adventure with Rickard & Tan's first legendary worksheets!
+                </p>
+                
+                <div class="quest-items">
+                    <div class="quest-item">
+                        <div class="quest-item-header">
+                            <div class="quest-badge">🏆 New Quest</div>
+                            <h3>Mathematical Quest Starter Pack</h3>
+                            <p class="quest-subtitle">Two Epic Versions • Beginner & Advanced</p>
+                        </div>
+                        
+                        <div class="quest-item-body">
+                            <div class="quest-preview">
+                                <div class="preview-scroll">
+                                    <h4>📜 What's Inside Your Quest Pack:</h4>
+                                    <ul class="quest-contents">
+                                        <li>🌟 <strong>Beginner's Quest:</strong> Perfect for young adventurers starting their mathematical journey</li>
+                                        <li>⚔️ <strong>Advanced Quest:</strong> For seasoned heroes ready for greater challenges</li>
+                                        <li>🗺️ <strong>Story-driven problems</strong> that make math feel like an adventure</li>
+                                        <li>🎯 <strong>Clear instructions</strong> and step-by-step guidance</li>
+                                        <li>✨ <strong>Beautiful adventure-themed design</strong> that engages learners</li>
+                                        <li>📚 <strong>Printable PDF format</strong> for easy use at home or school</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="quest-pricing">
+                                <div class="price-tag">
+                                    <span class="currency">$</span>
+                                    <span class="amount">9.99</span>
+                                    <span class="description">Complete Quest Pack</span>
+                                </div>
+                                
+                                <div class="quest-buttons">
+                                    <a href="https://gumroad.com/l/your-math-quest-pack" 
+                                       target="_blank" 
+                                       class="quest-buy-btn">
+                                        🛒 Start Quest - Buy Now
+                                    </a>
+                                    
+                                    <button onclick="alert('🔍 Preview Coming Soon!\\n\\nSample Quest Features:\\n• Story-based math problems\\n• Adventure-themed worksheets\\n• Step-by-step solutions\\n• Beginner & Advanced versions\\n\\nReplace this alert with your preview PDF link!')" 
+                                            class="quest-preview-btn">
+                                        👁️ Preview Quest
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quest-guarantee">
+                    <div class="guarantee-badge">
+                        <span class="guarantee-icon">🛡️</span>
+                        <div class="guarantee-text">
+                            <strong>Hero's Guarantee</strong>
+                            <p>Not satisfied with your quest? Get your gold back within 30 days!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section products">
+            <div class="container">
+                <h2>Future Adventures</h2>
+                <div class="product-cards">
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h3>Student Adventures</h3>
+                            <p>IGCSE • IB • IP Quests</p>
+                        </div>
+                        <div class="product-body">
+                            <ul class="product-features">
+                                <li>Epic story-based math quests</li>
+                                <li>Interactive adventure modules</li>
+                                <li>Legendary exam preparations</li>
+                                <li>Hero progress tracking</li>
+                                <li>Magical visual aids</li>
+                                <li>Guild challenge assessments</li>
+                            </ul>
+                            <a href="mailto:quest@mathstoryhub.com?subject=Coming Soon Updates&body=Please notify me when new adventures are available!" 
+                               class="btn btn-primary" style="width: 100%; text-align: center;">
+                               Coming Soon - Join the Quest!
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-header">
+                            <h3>Guild Master Training</h3>
+                            <p>Professional Adventures</p>
+                        </div>
+                        <div class="product-body">
+                            <ul class="product-features">
+                                <li>Real-world adventure stories</li>
+                                <li>Business kingdom mathematics</li>
+                                <li>Self-paced epic journeys</li>
+                                <li>Master certificate quests</li>
+                                <li>Industry-specific adventures</li>
+                                <li>Legendary mentor guidance</li>
+                            </ul>
+                            <a href="mailto:quest@mathstoryhub.com?subject=Guild Master Training Interest&body=Please notify me when Guild Master Training becomes available!" 
+                               class="btn btn-primary" style="width: 100%; text-align: center;">
+                               Coming Soon - Master the Guild!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Guild Section -->
+    <section id="guild" class="section guild-section">
+        <div class="container">
+            <h2 style="color: white;">🏰 Join the Mathematical Guild</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">
+                    Become part of Rickard & Tan's legendary guild of mathematical adventurers! Connect with fellow heroes, share quest stories, and get exclusive updates on new adventures.
+                </p>
+                
+                <div class="guild-cards">
+                    <div class="guild-card">
+                        <h3 style="color: #f39c12;">📧 Guild Messages</h3>
+                        <p>Get updates on new quests and mathematical adventures</p>
+                        <a href="mailto:quest@mathstoryhub.com?subject=Join the Mathematical Guild&body=I want to join Rickard and Tan's Mathematical Guild!" 
+                           style="background: #f39c12; color: white;">
+                            Join Guild
+                        </a>
+                    </div>
+                    
+                    <div class="guild-card">
+                        <h3 style="color: #e74c3c;">🗡️ Quest Support</h3>
+                        <p>Need help with your mathematical adventures?</p>
+                        <a href="mailto:quest@mathstoryhub.com?subject=Quest Support Needed&body=I need help with my mathematical quest!" 
+                           style="background: #e74c3c; color: white;">
+                            Get Help
+                        </a>
+                    </div>
+                    
+                    <div class="guild-card">
+                        <h3 style="color: #9b59b6;">🎓 Teacher's Lounge</h3>
+                        <p>Resources and support for educational heroes</p>
+                        <a href="mailto:quest@mathstoryhub.com?subject=Teacher Resources&body=I'm interested in using Math Quest Hub materials in my classroom!" 
+                           style="background: #9b59b6; color: white;">
+                            Educator Access
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background: rgba(241, 196, 15, 0.1); border-radius: 15px; border-left: 5px solid #f39c12;">
+                    <h4 style="color: #f39c12; margin-bottom: 1rem;">🏆 Guild Benefits</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                        <div>• Early access to new quests</div>
+                        <div>• Exclusive mathematical challenges</div>
+                        <div>• Direct line to Rickard & Tan</div>
+                        <div>• Community quest sharing</div>
+                        <div>• Teacher resource library</div>
+                        <div>• Adventure design feedback</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); color: white; text-align: center; padding: 4rem 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 600\"><path d=\"M0,0 Q600,100 1200,0 L1200,600 L0,600 Z\" fill=\"rgba(243,156,18,0.05)\"/></svg>'); background-size: cover;"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🏰 Math Quest Hub</h4>
+                    <p>Where every mathematical journey becomes an epic adventure and every learner becomes a legend.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>⚔️ Quest Navigation</h4>
+                    <p><a href="#home">Home Base</a></p>
+                    <p><a href="#about">The Legend</a></p>
+                    <p><a href="#quest-shop">Quest Shop</a></p>
+                    <p><a href="#products">Adventures</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>📜 Guild Contact</h4>
+                    <p>Email: quest@mathstoryhub.com</p>
+                    <p>Join Rickard & Tan's Mathematical Guild</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem; position: relative; z-index: 10;">
+                <p>&copy; 2025 Math Quest Hub. All adventures reserved. <span class="quest-marker">🗡️</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    console.log('Target not found:', targetId);
+                }
+            });
+        });
+
+        // Add animation class to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add dynamic floating elements
+        function createFloatingMathSymbol() {
+            const symbols = ['∞', '∑', '∫', '∆', 'π', '√', '∃', '∀', '∈', '∪'];
+            const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+            const element = document.createElement('div');
+            element.textContent = symbol;
+            element.className = 'floating-element';
+            element.style.left = Math.random() * 100 + '%';
+            element.style.top = Math.random() * 100 + '%';
+            element.style.animationDelay = Math.random() * 2 + 's';
+            element.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+            
+            document.querySelector('.adventure-bg').appendChild(element);
+            
+            setTimeout(() => {
+                element.remove();
+            }, 6000);
+        }
+
+        // Create floating symbols periodically
+        setInterval(createFloatingMathSymbol, 3000);
+
+        console.log('Math Quest Hub loaded successfully!');
+    </script>
+</body>
+</html>
