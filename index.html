@@ -529,6 +529,13 @@
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 100;
+        }
+
+        .quest-buy-btn:hover, .quest-preview-btn:hover {
+            cursor: pointer;
         }
 
         .quest-buy-btn {
@@ -542,6 +549,10 @@
             box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
         }
 
+        .quest-buy-btn:active {
+            transform: translateY(0px);
+        }
+
         .quest-preview-btn {
             background: transparent;
             color: #8e44ad;
@@ -551,6 +562,11 @@
         .quest-preview-btn:hover {
             background: #8e44ad;
             color: white;
+            transform: translateY(-2px);
+        }
+
+        .quest-preview-btn:active {
+            transform: translateY(0px);
         }
 
         .quest-guarantee {
