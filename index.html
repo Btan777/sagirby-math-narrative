@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Quest Hub - Epic Mathematical Adventures</title>
+    <title>Polymathy (MI) Academy - Where Knowledge Boundaries Dissolve</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,10 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
             color: #2c3e50;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #34495e 100%);
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5e35b1 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -27,7 +27,7 @@
         }
 
         /* Animated Background Elements */
-        .adventure-bg {
+        .renaissance-bg {
             position: fixed;
             top: 0;
             left: 0;
@@ -41,31 +41,33 @@
             position: absolute;
             font-size: 2rem;
             opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
+            color: #ffd700;
         }
 
-        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .floating-element:nth-child(2) { top: 60%; left: 80%; animation-delay: 1s; }
-        .floating-element:nth-child(3) { top: 40%; left: 70%; animation-delay: 2s; }
-        .floating-element:nth-child(4) { top: 80%; left: 20%; animation-delay: 3s; }
-        .floating-element:nth-child(5) { top: 10%; left: 60%; animation-delay: 4s; }
+        .floating-element:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 70%; left: 85%; animation-delay: 1s; }
+        .floating-element:nth-child(3) { top: 40%; left: 75%; animation-delay: 2s; }
+        .floating-element:nth-child(4) { top: 85%; left: 15%; animation-delay: 3s; }
+        .floating-element:nth-child(5) { top: 25%; left: 50%; animation-delay: 4s; }
+        .floating-element:nth-child(6) { top: 60%; left: 25%; animation-delay: 5s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
         }
 
         /* Header */
         header {
-            background: rgba(44, 62, 80, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 3px solid #f39c12;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid #ffd700;
         }
 
         nav {
@@ -78,9 +80,10 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #f39c12;
+            color: #ffd700;
             text-decoration: none;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Georgia', serif;
         }
 
         .nav-links {
@@ -95,10 +98,11 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-family: 'Georgia', serif;
         }
 
         .nav-links a:hover {
-            color: #f39c12;
+            color: #ffd700;
             transform: translateY(-2px);
         }
 
@@ -109,7 +113,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #f39c12;
+            background: #ffd700;
             transition: width 0.3s ease;
         }
 
@@ -132,7 +136,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,400 Q300,300 600,400 T1200,400 L1200,600 L0,600 Z" fill="rgba(241,196,15,0.1)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,400 Q300,300 600,400 T1200,400 L1200,600 L0,600 Z" fill="rgba(255,215,0,0.1)"/></svg>');
             background-size: cover;
             background-position: bottom;
         }
@@ -143,29 +147,31 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(45deg, #f39c12, #e74c3c, #9b59b6);
+            background: linear-gradient(45deg, #ffd700, #ffb300, #ff6f00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Georgia', serif;
         }
 
         .hero .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #f39c12;
+            color: #ffd700;
             font-weight: 600;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-style: italic;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -190,6 +196,7 @@
             overflow: hidden;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: 'Georgia', serif;
         }
 
         .btn::before {
@@ -208,33 +215,33 @@
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: linear-gradient(45deg, #ff6f00, #e65100);
             color: white;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 111, 0, 0.6);
         }
 
         .btn-secondary {
             background: transparent;
-            color: #f39c12;
-            border-color: #f39c12;
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            color: #ffd700;
+            border-color: #ffd700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
         .btn-secondary:hover {
-            background: #f39c12;
-            color: #2c3e50;
+            background: #ffd700;
+            color: #1a237e;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
         }
 
         /* Main Content */
         .main-content {
-            background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             margin-top: -80px;
             border-radius: 30px 30px 0 0;
             position: relative;
@@ -247,12 +254,13 @@
         }
 
         .section h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             text-align: center;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: #1a237e;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
+            font-family: 'Georgia', serif;
         }
 
         .section h2::after {
@@ -261,69 +269,136 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 120px;
             height: 4px;
-            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            background: linear-gradient(45deg, #ff6f00, #ffd700);
             border-radius: 2px;
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /* Polymathy Write-up Section */
+        .polymathy-intro {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
+        .polymathy-intro::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(45deg, #e74c3c, #f39c12, #9b59b6);
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,200 Q600,100 1200,200 L1200,600 L0,600 Z" fill="rgba(255,215,0,0.05)"/></svg>');
+            background-size: cover;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        .polymathy-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: block;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+        .polymathy-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            font-family: 'Georgia', serif;
+            font-style: italic;
         }
 
-        .feature-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+        .polymathy-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-align: justify;
+        }
+
+        .polymathy-content strong {
+            color: #ffd700;
             font-weight: 700;
         }
 
-        .feature-card p {
-            color: #7f8c8d;
+        /* Intelligence Domains Grid */
+        .intelligences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .intelligence-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid;
+        }
+
+        .intelligence-card:nth-child(1) { border-top-color: #e74c3c; }
+        .intelligence-card:nth-child(2) { border-top-color: #9b59b6; }
+        .intelligence-card:nth-child(3) { border-top-color: #3498db; }
+        .intelligence-card:nth-child(4) { border-top-color: #f39c12; }
+        .intelligence-card:nth-child(5) { border-top-color: #1abc9c; }
+        .intelligence-card:nth-child(6) { border-top-color: #27ae60; }
+
+        .intelligence-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .intelligence-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
+        }
+
+        .intelligence-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a237e;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+        }
+
+        .intelligence-card p {
+            color: #555;
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .intelligence-skills {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intelligence-skills li {
+            padding: 0.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .intelligence-skills li::before {
+            content: "✦";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         /* About Section */
         .about {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
             color: white;
             position: relative;
             overflow: hidden;
@@ -350,7 +425,7 @@
         }
 
         .about-text {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             line-height: 1.8;
         }
 
@@ -363,292 +438,59 @@
             text-align: center;
             font-size: 12rem;
             opacity: 0.8;
-            animation: pulse 3s ease-in-out infinite;
+            animation: pulse 4s ease-in-out infinite;
         }
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 1; }
         }
 
-        /* Quest Shop Section */
-        .quest-shop {
-            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quest-shop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-        }
-
-        .quest-items {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .quest-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            width: 100%;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .quest-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .quest-item-header {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            padding: 2rem;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .quest-badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .quest-item-header h3 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .quest-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .quest-item-body {
-            padding: 2.5rem;
-            color: #2c3e50;
-        }
-
-        .quest-preview {
-            margin-bottom: 2rem;
-        }
-
-        .preview-scroll {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border-left: 5px solid #f39c12;
-        }
-
-        .preview-scroll h4 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .quest-contents {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .quest-contents li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .quest-contents li:last-child {
-            border-bottom: none;
-        }
-
-        .quest-pricing {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .price-tag {
-            display: flex;
-            align-items: baseline;
-            gap: 0.25rem;
-        }
-
-        .price-tag .currency {
-            font-size: 1.5rem;
-            color: #7f8c8d;
-        }
-
-        .price-tag .amount {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #e74c3c;
-        }
-
-        .price-tag .description {
-            font-size: 1rem;
-            color: #7f8c8d;
-            margin-left: 0.5rem;
-        }
-
-        /* SIMPLIFIED WORKING BUTTONS */
-        .quest-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .quest-buy-btn {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .quest-buy-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
-        }
-
-        .quest-preview-btn {
-            background: transparent;
-            color: #8e44ad;
-            border: 2px solid #8e44ad;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .quest-preview-btn:hover {
-            background: #8e44ad;
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .quest-guarantee {
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .guarantee-badge {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .guarantee-icon {
-            font-size: 2rem;
-        }
-
-        .guarantee-text strong {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .guarantee-text p {
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        /* Products Section */
-        .products {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        /* Academy Programs Section */
+        .programs {
+            background: linear-gradient(135deg, #5e35b1 0%, #512da8 100%);
             color: white;
         }
 
-        .product-cards {
+        .program-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
 
-        .product-card {
+        .program-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
             position: relative;
         }
 
-        .product-card:hover {
-            transform: translateY(-15px) rotate(2deg);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        .program-card:hover {
+            transform: translateY(-20px) rotate(1deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .product-header {
+        .program-header {
             padding: 3rem 2rem;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
             color: white;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .product-header::before {
+        .program-header::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+            animation: shimmer 4s ease-in-out infinite;
         }
 
         @keyframes shimmer {
@@ -656,79 +498,83 @@
             50% { transform: translate(-50%, -50%) rotate(180deg); }
         }
 
-        .product-header h3 {
-            font-size: 2.2rem;
+        .program-header h3 {
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
             position: relative;
             z-index: 10;
+            font-family: 'Georgia', serif;
         }
 
-        .product-header p {
-            font-size: 1.1rem;
+        .program-header p {
+            font-size: 1.2rem;
             opacity: 0.9;
             position: relative;
             z-index: 10;
         }
 
-        .product-body {
-            padding: 2.5rem;
+        .program-body {
+            padding: 3rem;
             color: #2c3e50;
         }
 
-        .product-features {
+        .program-features {
             list-style: none;
             margin-bottom: 2rem;
         }
 
-        .product-features li {
+        .program-features li {
             padding: 1rem 0;
             border-bottom: 1px solid #ecf0f1;
             font-size: 1.1rem;
             transition: all 0.3s ease;
         }
 
-        .product-features li:hover {
-            padding-left: 10px;
-            color: #e74c3c;
+        .program-features li:hover {
+            padding-left: 15px;
+            color: #1a237e;
         }
 
-        .product-features li:before {
-            content: "⚔️";
+        .program-features li:before {
+            content: "🎓";
             margin-right: 15px;
             font-size: 1.2rem;
         }
 
         /* Guild Section */
         .guild-section {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
         }
 
         .guild-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
 
         .guild-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
             text-align: center;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         .guild-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.15);
+            border-color: #ffd700;
         }
 
         .guild-card h3 {
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-family: 'Georgia', serif;
         }
 
         .guild-card p {
@@ -748,11 +594,11 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .cta-buttons {
@@ -768,23 +614,12 @@
                 display: none;
             }
             
-            .product-cards {
+            .program-cards {
                 grid-template-columns: 1fr;
             }
 
-            .quest-pricing {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .quest-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .quest-buy-btn, .quest-preview-btn {
-                width: 90%;
-                text-align: center;
+            .intelligences-grid {
+                grid-template-columns: 1fr;
             }
 
             .guild-cards {
@@ -796,7 +631,7 @@
         .fade-in {
             opacity: 0;
             transform: translateY(50px);
-            animation: fadeIn 0.8s ease forwards;
+            animation: fadeIn 1s ease forwards;
         }
 
         @keyframes fadeIn {
@@ -806,42 +641,45 @@
             }
         }
 
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .intelligence-card:nth-child(1) { animation-delay: 0.1s; }
+        .intelligence-card:nth-child(2) { animation-delay: 0.2s; }
+        .intelligence-card:nth-child(3) { animation-delay: 0.3s; }
+        .intelligence-card:nth-child(4) { animation-delay: 0.4s; }
+        .intelligence-card:nth-child(5) { animation-delay: 0.5s; }
+        .intelligence-card:nth-child(6) { animation-delay: 0.6s; }
 
-        /* Adventure Elements */
-        .quest-marker {
+        /* Da Vinci Elements */
+        .renaissance-marker {
             display: inline-block;
             margin: 0 0.5rem;
-            animation: bounce 2s infinite;
+            animation: glow 3s ease-in-out infinite alternate;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ffd700; }
+            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffb300; }
         }
     </style>
 </head>
 <body>
-    <div class="adventure-bg">
-        <div class="floating-element">🧭</div>
-        <div class="floating-element">⚔️</div>
-        <div class="floating-element">🗺️</div>
-        <div class="floating-element">🏰</div>
-        <div class="floating-element">📜</div>
+    <div class="renaissance-bg">
+        <div class="floating-element">🎨</div>
+        <div class="floating-element">🎵</div>
+        <div class="floating-element">🏃‍♂️</div>
+        <div class="floating-element">📚</div>
+        <div class="floating-element">📐</div>
+        <div class="floating-element">🌿</div>
     </div>
 
     <header>
         <nav class="container">
-            <a href="#home" class="logo">🏰 Math Quest Hub</a>
+            <a href="#home" class="logo">🏛️ Polymathy (MI) Academy</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">Quest</a></li>
-                <li><a href="#quest-shop">Shop</a></li>
-                <li><a href="#products">Adventures</a></li>
-                <li><a href="#guild">Guild</a></li>
+                <li><a href="#about">Vision</a></li>
+                <li><a href="#intelligences">Intelligences</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#guild">Community</a></li>
             </ul>
         </nav>
     </header>
@@ -849,36 +687,106 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Epic Mathematical Adventures</h1>
-                <p class="subtitle">Join Rickard & Tan's Quest <span class="quest-marker">🗡️</span> Where Numbers Become Legends</p>
-                <p>Embark on extraordinary journeys through the realm of mathematics, where every equation tells a story and every problem is a quest waiting to be conquered!</p>
+                <h1>Polymathy (MI) Academy</h1>
+                <p class="subtitle">Where Knowledge Boundaries Dissolve <span class="renaissance-marker">✨</span> À la Da Vinci</p>
+                <p>Discover the power of polymathic thinking through Rickard & Tan's revolutionary approach to multiple intelligence education, where every learner becomes a Renaissance mind.</p>
                 <div class="cta-buttons">
-                    <a href="#quest-shop" class="btn btn-primary">Start Your Quest</a>
-                    <a href="#about" class="btn btn-secondary">Explore the Map</a>
+                    <a href="#intelligences" class="btn btn-primary">Explore Intelligences</a>
+                    <a href="#about" class="btn btn-secondary">Our Vision</a>
                 </div>
             </div>
         </div>
     </section>
 
     <main class="main-content">
-        <section class="section">
+        <section class="section polymathy-intro">
             <div class="container">
-                <h2>Choose Your Adventure</h2>
-                <div class="features-grid">
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">🐉</div>
-                        <h3>Story Quests</h3>
-                        <p>Slay mathematical dragons and solve ancient riddles as you journey through enchanted kingdoms where algebra comes alive and geometry holds the key to treasure.</p>
+                <div class="polymathy-content">
+                    <h3>The Polymathic Mind: Where Knowledge Boundaries Dissolve</h3>
+                    
+                    <p>Polymathy emerges when the artificial walls between different domains of knowledge crumble, revealing the profound interconnectedness that drives human innovation. True polymathic learning occurs not through the simple accumulation of facts across fields, but through the <strong>dynamic fusion of two or more knowledge domains</strong> that creates something entirely new. When a student combines mathematical patterns with musical rhythms, or merges artistic visualization with scientific observation, they are following in the footsteps of Leonardo da Vinci—who saw no separation between anatomy and art, engineering and nature, or physics and painting. This boundary-breaking mindset transforms learners from passive recipients of compartmentalized information into active architects of knowledge, capable of discovering connections that specialists working in isolation might never glimpse.</p>
+                    
+                    <p>The fusion process itself is where the magic happens: <strong>linguistic intelligence</strong> provides the vocabulary to articulate complex ideas, while <strong>spatial intelligence</strong> helps visualize relationships between concepts; <strong>kinesthetic intelligence</strong> allows hands-on experimentation that <strong>naturalistic intelligence</strong> can interpret through pattern recognition; <strong>musical intelligence</strong> reveals rhythmic structures that <strong>logical-mathematical intelligence</strong> can quantify and analyze. Modern breakthroughs—from bioinformatics (biology + computer science) to sustainable technology (environmental science + engineering + economics)—demonstrate that innovation consistently emerges at these disciplinary intersections. The most transformative solutions to complex challenges arise when minds trained in multiple intelligences can synthesize insights from seemingly unrelated fields, creating what researchers call "atypical combinations" that drive breakthrough discoveries.</p>
+                    
+                    <p>For today's students and educators, embracing polymathy means <strong>recognizing that the future belongs to those who can build bridges between worlds</strong>. In an era where artificial intelligence can process information within single domains, the uniquely human capacity for cross-domain synthesis becomes our greatest educational asset. When we encourage students to see connections between their artistic expression and scientific inquiry, between their kinesthetic experiences and spatial reasoning, between their musical talents and mathematical thinking, we prepare them not just to solve the problems of tomorrow, but to identify problems that others cannot yet see. The polymathic mind doesn't just accumulate knowledge—it transforms it, creating new possibilities through the courage to cross boundaries that others accept as permanent.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="intelligences" class="section">
+            <div class="container">
+                <h2>Multiple Intelligence Domains</h2>
+                <div class="intelligences-grid">
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">🎨</div>
+                        <h3>Artistic Intelligence</h3>
+                        <p>Master visual expression, design thinking, and creative problem-solving through the language of color, form, and spatial relationships.</p>
+                        <ul class="intelligence-skills">
+                            <li>Visual arts and design</li>
+                            <li>Creative expression</li>
+                            <li>Aesthetic appreciation</li>
+                            <li>Visual problem-solving</li>
+                        </ul>
                     </div>
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">🏆</div>
-                        <h3>Curriculum Kingdoms</h3>
-                        <p>Conquer the realms of IGCSE, IB, and IP with your mathematical sword and shield. Master each kingdom's unique challenges and earn your mathematical knighthood.</p>
+                    
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">🎵</div>
+                        <h3>Musical Intelligence</h3>
+                        <p>Explore rhythm, melody, and harmonic patterns that reveal mathematical relationships and emotional resonance across cultures.</p>
+                        <ul class="intelligence-skills">
+                            <li>Rhythm and melody</li>
+                            <li>Musical composition</li>
+                            <li>Sound pattern recognition</li>
+                            <li>Auditory processing</li>
+                        </ul>
                     </div>
-                    <div class="feature-card fade-in">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Guild Training</h3>
-                        <p>Join the Mathematical Guild where warriors of all ages train together. From young apprentices to seasoned masters, everyone finds their path to numerical mastery.</p>
+                    
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">🏃‍♂️</div>
+                        <h3>Kinesthetic Intelligence</h3>
+                        <p>Develop body-mind coordination, physical expression, and hands-on learning that connects movement with understanding.</p>
+                        <ul class="intelligence-skills">
+                            <li>Physical coordination</li>
+                            <li>Body awareness</li>
+                            <li>Hands-on learning</li>
+                            <li>Movement expression</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">📚</div>
+                        <h3>Linguistic Intelligence</h3>
+                        <p>Command the power of words, storytelling, and communication to bridge ideas across all domains of knowledge.</p>
+                        <ul class="intelligence-skills">
+                            <li>Language mastery</li>
+                            <li>Written expression</li>
+                            <li>Storytelling</li>
+                            <li>Communication skills</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">📐</div>
+                        <h3>Spatial Intelligence</h3>
+                        <p>Visualize complex relationships, navigate dimensional thinking, and understand how forms interact in space and time.</p>
+                        <ul class="intelligence-skills">
+                            <li>3D visualization</li>
+                            <li>Spatial reasoning</li>
+                            <li>Geometric thinking</li>
+                            <li>Navigation skills</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="intelligence-card fade-in">
+                        <div class="intelligence-icon">🌿</div>
+                        <h3>Naturalistic Intelligence</h3>
+                        <p>Recognize patterns in nature, understand ecological systems, and apply biological principles to solve human challenges.</p>
+                        <ul class="intelligence-skills">
+                            <li>Nature pattern recognition</li>
+                            <li>Environmental awareness</li>
+                            <li>Biological systems</li>
+                            <li>Ecological thinking</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -886,278 +794,7 @@
 
         <section id="about" class="section about">
             <div class="container">
-                <h2>The Legend of Rickard & Tan</h2>
+                <h2>The Renaissance Mentors</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>In the mystical realm of mathematical learning, there lived two legendary storytellers named Rickard Sagirby and Tan. Armed with the ancient art of narrative magic, they discovered that every mathematical concept harbored a hidden story waiting to be unleashed.</p>
-                        
-                        <p>Their quest began when they realized that traditional mathematics education was like a treasure map written in an unknown language. Together, they forged a new path, transforming abstract numbers into living characters, equations into epic adventures, and problem-solving into heroic journeys.</p>
-                        
-                        <p>Now, adventurers from across the mathematical kingdoms gather to join their guild, where learning becomes an epic quest and every student becomes the hero of their own mathematical story.</p>
-                    </div>
-                    <div class="about-image">
-                        🧙‍♂️👨‍🎓📚✨
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quest Shop Section -->
-        <section id="quest-shop" class="section quest-shop">
-            <div class="container">
-                <h2>🗡️ Quest Shop - Available Now!</h2>
-                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #ecf0f1;">
-                    Begin your mathematical adventure with Rickard & Tan's first legendary worksheets!
-                </p>
-                
-                <div class="quest-items">
-                    <div class="quest-item">
-                        <div class="quest-item-header">
-                            <div class="quest-badge">🏆 New Quest</div>
-                            <h3>Mathematical Quest Starter Pack</h3>
-                            <p class="quest-subtitle">Two Epic Versions • Beginner & Advanced</p>
-                        </div>
-                        
-                        <div class="quest-item-body">
-                            <div class="quest-preview">
-                                <div class="preview-scroll">
-                                    <h4>📜 What's Inside Your Quest Pack:</h4>
-                                    <ul class="quest-contents">
-                                        <li>🌟 <strong>Beginner's Quest:</strong> Perfect for young adventurers starting their mathematical journey</li>
-                                        <li>⚔️ <strong>Advanced Quest:</strong> For seasoned heroes ready for greater challenges</li>
-                                        <li>🗺️ <strong>Story-driven problems</strong> that make math feel like an adventure</li>
-                                        <li>🎯 <strong>Clear instructions</strong> and step-by-step guidance</li>
-                                        <li>✨ <strong>Beautiful adventure-themed design</strong> that engages learners</li>
-                                        <li>📚 <strong>Printable PDF format</strong> for easy use at home or school</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="quest-pricing">
-                                <div class="price-tag">
-                                    <span class="currency">$</span>
-                                    <span class="amount">9.99</span>
-                                    <span class="description">Complete Quest Pack</span>
-                                </div>
-                                
-                                <div class="quest-buttons">
-                                    <a href="https://gumroad.com/l/your-math-quest-pack" 
-                                       target="_blank" 
-                                       class="quest-buy-btn">
-                                        🛒 Start Quest - Buy Now
-                                    </a>
-                                    
-                                    <button onclick="alert('🔍 Preview Coming Soon!\\n\\nSample Quest Features:\\n• Story-based math problems\\n• Adventure-themed worksheets\\n• Step-by-step solutions\\n• Beginner & Advanced versions\\n\\nReplace this alert with your preview PDF link!')" 
-                                            class="quest-preview-btn">
-                                        👁️ Preview Quest
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="quest-guarantee">
-                    <div class="guarantee-badge">
-                        <span class="guarantee-icon">🛡️</span>
-                        <div class="guarantee-text">
-                            <strong>Hero's Guarantee</strong>
-                            <p>Not satisfied with your quest? Get your gold back within 30 days!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="products" class="section products">
-            <div class="container">
-                <h2>Future Adventures</h2>
-                <div class="product-cards">
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>Student Adventures</h3>
-                            <p>IGCSE • IB • IP Quests</p>
-                        </div>
-                        <div class="product-body">
-                            <ul class="product-features">
-                                <li>Epic story-based math quests</li>
-                                <li>Interactive adventure modules</li>
-                                <li>Legendary exam preparations</li>
-                                <li>Hero progress tracking</li>
-                                <li>Magical visual aids</li>
-                                <li>Guild challenge assessments</li>
-                            </ul>
-                            <a href="mailto:quest@mathstoryhub.com?subject=Coming Soon Updates&body=Please notify me when new adventures are available!" 
-                               class="btn btn-primary" style="width: 100%; text-align: center;">
-                               Coming Soon - Join the Quest!
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>Guild Master Training</h3>
-                            <p>Professional Adventures</p>
-                        </div>
-                        <div class="product-body">
-                            <ul class="product-features">
-                                <li>Real-world adventure stories</li>
-                                <li>Business kingdom mathematics</li>
-                                <li>Self-paced epic journeys</li>
-                                <li>Master certificate quests</li>
-                                <li>Industry-specific adventures</li>
-                                <li>Legendary mentor guidance</li>
-                            </ul>
-                            <a href="mailto:quest@mathstoryhub.com?subject=Guild Master Training Interest&body=Please notify me when Guild Master Training becomes available!" 
-                               class="btn btn-primary" style="width: 100%; text-align: center;">
-                               Coming Soon - Master the Guild!
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Guild Section -->
-    <section id="guild" class="section guild-section">
-        <div class="container">
-            <h2 style="color: white;">🏰 Join the Mathematical Guild</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">
-                    Become part of Rickard & Tan's legendary guild of mathematical adventurers! Connect with fellow heroes, share quest stories, and get exclusive updates on new adventures.
-                </p>
-                
-                <div class="guild-cards">
-                    <div class="guild-card">
-                        <h3 style="color: #f39c12;">📧 Guild Messages</h3>
-                        <p>Get updates on new quests and mathematical adventures</p>
-                        <a href="mailto:quest@mathstoryhub.com?subject=Join the Mathematical Guild&body=I want to join Rickard and Tan's Mathematical Guild!" 
-                           style="background: #f39c12; color: white;">
-                            Join Guild
-                        </a>
-                    </div>
-                    
-                    <div class="guild-card">
-                        <h3 style="color: #e74c3c;">🗡️ Quest Support</h3>
-                        <p>Need help with your mathematical adventures?</p>
-                        <a href="mailto:quest@mathstoryhub.com?subject=Quest Support Needed&body=I need help with my mathematical quest!" 
-                           style="background: #e74c3c; color: white;">
-                            Get Help
-                        </a>
-                    </div>
-                    
-                    <div class="guild-card">
-                        <h3 style="color: #9b59b6;">🎓 Teacher's Lounge</h3>
-                        <p>Resources and support for educational heroes</p>
-                        <a href="mailto:quest@mathstoryhub.com?subject=Teacher Resources&body=I'm interested in using Math Quest Hub materials in my classroom!" 
-                           style="background: #9b59b6; color: white;">
-                            Educator Access
-                        </a>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 3rem; padding: 2rem; background: rgba(241, 196, 15, 0.1); border-radius: 15px; border-left: 5px solid #f39c12;">
-                    <h4 style="color: #f39c12; margin-bottom: 1rem;">🏆 Guild Benefits</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
-                        <div>• Early access to new quests</div>
-                        <div>• Exclusive mathematical challenges</div>
-                        <div>• Direct line to Rickard & Tan</div>
-                        <div>• Community quest sharing</div>
-                        <div>• Teacher resource library</div>
-                        <div>• Adventure design feedback</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%); color: white; text-align: center; padding: 4rem 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 600\"><path d=\"M0,0 Q600,100 1200,0 L1200,600 L0,600 Z\" fill=\"rgba(243,156,18,0.05)\"/></svg>'); background-size: cover;"></div>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>🏰 Math Quest Hub</h4>
-                    <p>Where every mathematical journey becomes an epic adventure and every learner becomes a legend.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>⚔️ Quest Navigation</h4>
-                    <p><a href="#home">Home Base</a></p>
-                    <p><a href="#about">The Legend</a></p>
-                    <p><a href="#quest-shop">Quest Shop</a></p>
-                    <p><a href="#products">Adventures</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>📜 Guild Contact</h4>
-                    <p>Email: quest@mathstoryhub.com</p>
-                    <p>Join Rickard & Tan's Mathematical Guild</p>
-                </div>
-            </div>
-            <div style="border-top: 1px solid #34495e; padding-top: 2rem; margin-top: 2rem; position: relative; z-index: 10;">
-                <p>&copy; 2025 Math Quest Hub. All adventures reserved. <span class="quest-marker">🗡️</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                } else {
-                    console.log('Target not found:', targetId);
-                }
-            });
-        });
-
-        // Add animation class to elements when they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Add dynamic floating elements
-        function createFloatingMathSymbol() {
-            const symbols = ['∞', '∑', '∫', '∆', 'π', '√', '∃', '∀', '∈', '∪'];
-            const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-            const element = document.createElement('div');
-            element.textContent = symbol;
-            element.className = 'floating-element';
-            element.style.left = Math.random() * 100 + '%';
-            element.style.top = Math.random() * 100 + '%';
-            element.style.animationDelay = Math.random() * 2 + 's';
-            element.style.fontSize = (Math.random() * 2 + 1) + 'rem';
-            
-            document.querySelector('.adventure-bg').appendChild(element);
-            
-            setTimeout(() => {
-                element.remove();
-            }, 6000);
-        }
-
-        // Create floating symbols periodically
-        setInterval(createFloatingMathSymbol, 3000);
-
-        console.log('Math Quest Hub loaded successfully!');
-    </script>
-</body>
-</html>
+                        <p>In the spirit of Leonardo da Vinci's boundless curiosity, <strong>Rickard Sagirby and Tan</strong> have dedicated themselves to breaking down the artificial barriers that
