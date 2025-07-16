@@ -4,220 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Your Multiple Intelligences | Polymathy Academy Quiz</title>
-    <meta name="description" content="Take our scientifically-based Multiple Intelligence Quiz to discover your unique cognitive strengths and get personalized learning recommendations.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1>Multiple Intelligence Quiz</h1>
+                <p>Discover your cognitive strengths by taking this quick quiz!</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Question 1 of 3</div>
+            </div>
+            <div class="quiz-content" id="quiz-content">
+                <!-- Questions will be injected here -->
+            </div>
+            <div class="navigation">
+                <button class="btn btn-primary" id="prev-btn">Previous</button>
+                <button class="btn btn-primary" id="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Which activity do you enjoy the most?",
+                options: [
+                    { text: "Solving puzzles", type: "Logical-Mathematical" },
+                    { text: "Painting or drawing", type: "Spatial" },
+                    { text: "Playing a musical instrument", type: "Musical" }
+                ]
+            },
+            {
+                question: "What do people often praise you for?",
+                options: [
+                    { text: "Your empathy", type: "Interpersonal" },
+                    { text: "Your self-reflection", type: "Intrapersonal" },
+                    { text: "Your athletic skills", type: "Bodily-Kinesthetic" }
+                ]
+            },
+            {
+                question: "Which of these is your favorite pastime?",
+                options: [
+                    { text: "Reading books", type: "Linguistic" },
+                    { text: "Exploring nature", type: "Naturalistic" },
+                    { text: "Solving riddles", type: "Logical-Mathematical" }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        const selections = [];
+
+        const quizContent = document.getElementById('quiz-content');
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            quizContent.innerHTML = `<div class="question-container active">
+                <div class="question">
+                    <h2>${q.question}</h2>
+                </div>
+                <div class="options">
+                    ${q.options.map((opt, index) => `
+                        <div class="option" onclick="selectOption(${index})">
+                            ${opt.text}
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+
+            progressFill.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+            progressText.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
         }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5e35b1 100%);
-            min-height: 100vh;
-            padding: 2rem 0;
+        function selectOption(index) {
+            selections[currentQuestion] = index;
+            const options = document.querySelectorAll('.option');
+            options.forEach((opt, idx) => {
+                opt.classList.toggle('selected', idx === index);
+            });
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (typeof selections[currentQuestion] === 'undefined') {
+                alert('Please select an option before proceeding.');
+                return;
+            }
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        });
+
+        function showResults() {
+            const intelligenceCounts = {};
+            selections.forEach((selection, idx) => {
+                const type = questions[idx].options[selection].type;
+                intelligenceCounts[type] = (intelligenceCounts[type] || 0) + 1;
+            });
+
+            const topType = Object.keys(intelligenceCounts).reduce((a, b) => intelligenceCounts[a] > intelligenceCounts[b] ? a : b);
+
+            quizContent.innerHTML = `<div class="question-container active">
+                <div class="question">
+                    <h2>Your Dominant Intelligence:</h2>
+                    <p><strong>${topType}</strong></p>
+                </div>
+            </div>`;
+
+            progressFill.style.width = '100%';
+            progressText.textContent = 'Quiz Completed';
         }
 
-        .quiz-container {
-            background: white;
-            border-radius: 25px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .quiz-header {
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quiz-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-            animation: shimmer 6s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
-            50% { transform: translate(-50%, -50%) rotate(180deg); }
-        }
-
-        .quiz-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-            position: relative;
-            z-index: 10;
-        }
-
-        .quiz-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 10;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .progress-container {
-            background: #f8f9fa;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: #e9ecef;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(45deg, #ff6f00, #ffd700);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-            width: 0%;
-        }
-
-        .progress-text {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .quiz-content {
-            padding: 3rem 2rem;
-            min-height: 400px;
-        }
-
-        .question-container {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .question-container.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .question {
-            margin-bottom: 2rem;
-        }
-
-        .question h2 {
-            font-size: 1.8rem;
-            color: #1a237e;
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .question p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .options {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .option {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 15px;
-            padding: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .option:hover {
-            border-color: #ffd700;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .option.selected {
-            border-color: #1a237e;
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-            color: white;
-        }
-
-        .option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .option-text {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .option-description {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            line-height: 1.5;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Georgia', serif;
-            min-width: 120px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff6f00, #e65100);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
-        }
-
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba​​​​​​​​​​​​​​​​
-```
+        loadQuestion();
+    </script>
+</body>
+</html>
