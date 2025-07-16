@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polymathy (MI) Academy - Where Knowledge Boundaries Dissolve</title>
+    <meta name="description" content="Discover polymathic thinking through multiple intelligence education. Develop AI-ready minds that bridge knowledge domains with BrainHQ neuroplasticity training.">
+    <meta name="keywords" content="polymathy, multiple intelligences, AI education, neuroplasticity, BrainHQ, Renaissance learning">
     <style>
         * {
             margin: 0;
@@ -26,6 +28,24 @@
             padding: 0 20px;
         }
 
+        /* Skip to main content for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #1a237e;
+            color: #ffd700;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
         /* Animated Background Elements */
         .renaissance-bg {
             position: fixed;
@@ -44,6 +64,7 @@
             animation: float 8s ease-in-out infinite;
             color: #ffd700;
             will-change: transform;
+            pointer-events: none;
         }
 
         .floating-element:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
@@ -87,6 +108,15 @@
             text-decoration: none;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-family: 'Georgia', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 4px;
+            border-radius: 4px;
         }
 
         .nav-links {
@@ -102,44 +132,61 @@
             transition: all 0.3s ease;
             position: relative;
             font-family: 'Georgia', serif;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a:focus {
             color: #ffd700;
             transform: translateY(-2px);
+            outline: none;
+        }
+
+        .nav-links a:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 2px;
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 2px;
             background: #ffd700;
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 80%;
         }
 
         /* Mobile Menu */
         .mobile-menu-toggle {
             display: none;
             background: none;
-            border: none;
-            font-size: 2rem;
+            border: 2px solid #ffd700;
+            font-size: 1.5rem;
             color: #ffd700;
             cursor: pointer;
-            padding: 0.5rem;
+            padding: 0.75rem;
             transition: all 0.3s ease;
             z-index: 1001;
+            border-radius: 4px;
+            min-width: 44px;
+            min-height: 44px;
         }
 
-        .mobile-menu-toggle:hover {
+        .mobile-menu-toggle:hover,
+        .mobile-menu-toggle:focus {
             transform: scale(1.1);
             filter: drop-shadow(0 0 10px #ffd700);
+            outline: none;
+            background: rgba(255, 215, 0, 0.1);
         }
 
         .mobile-menu {
@@ -165,14 +212,14 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
             text-align: center;
         }
 
         .mobile-menu a {
             text-decoration: none;
             color: #ecf0f1;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 500;
             font-family: 'Georgia', serif;
             padding: 1rem;
@@ -181,14 +228,21 @@
             display: block;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .mobile-menu a:hover {
+        .mobile-menu a:hover,
+        .mobile-menu a:focus {
             color: #ffd700;
             background: rgba(255, 215, 0, 0.2);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            outline: none;
+            border-color: #ffd700;
         }
 
         .mobile-close {
@@ -196,16 +250,25 @@
             top: 1.5rem;
             right: 2rem;
             background: none;
-            border: none;
-            font-size: 2.5rem;
+            border: 2px solid #ffd700;
+            font-size: 2rem;
             color: #ffd700;
             cursor: pointer;
             transition: all 0.3s ease;
+            border-radius: 4px;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .mobile-close:hover {
+        .mobile-close:hover,
+        .mobile-close:focus {
             transform: rotate(90deg);
             filter: drop-shadow(0 0 10px #ffd700);
+            outline: none;
+            background: rgba(255, 215, 0, 0.1);
         }
 
         /* Hero Section */
@@ -284,6 +347,15 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: 'Georgia', serif;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 4px;
         }
 
         .btn::before {
@@ -297,7 +369,8 @@
             transition: left 0.5s ease;
         }
 
-        .btn:hover::before {
+        .btn:hover::before,
+        .btn:focus::before {
             left: 100%;
         }
 
@@ -307,7 +380,8 @@
             box-shadow: 0 5px 15px rgba(255, 111, 0, 0.4);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:focus {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 111, 0, 0.6);
         }
@@ -319,7 +393,8 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover,
+        .btn-secondary:focus {
             background: #ffd700;
             color: #1a237e;
             transform: translateY(-3px);
@@ -431,6 +506,11 @@
             will-change: transform;
         }
 
+        .intelligence-card:focus-within {
+            outline: 3px solid #1a237e;
+            outline-offset: 4px;
+        }
+
         .intelligence-card:nth-child(1) { border-top-color: #e74c3c; }
         .intelligence-card:nth-child(2) { border-top-color: #9b59b6; }
         .intelligence-card:nth-child(3) { border-top-color: #3498db; }
@@ -461,7 +541,7 @@
         }
 
         .intelligence-card p {
-            color: #555;
+            color: #444;
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
@@ -475,7 +555,7 @@
 
         .intelligence-skills li {
             padding: 0.5rem 0;
-            color: #666;
+            color: #555;
             font-style: italic;
         }
 
@@ -558,6 +638,11 @@
             position: relative;
         }
 
+        .program-card:focus-within {
+            outline: 3px solid #ffd700;
+            outline-offset: 4px;
+        }
+
         .program-card:hover {
             transform: translateY(-20px) rotate(1deg);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
@@ -619,6 +704,7 @@
             border-bottom: 1px solid #ecf0f1;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            color: #444;
         }
 
         .program-features li:hover {
@@ -652,7 +738,12 @@
             backdrop-filter: blur(15px);
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .guild-card:focus-within {
+            outline: 3px solid #ffd700;
+            outline-offset: 4px;
         }
 
         .guild-card:hover {
@@ -679,6 +770,30 @@
             font-weight: 600;
             transition: all 0.3s ease;
             display: inline-block;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid transparent;
+        }
+
+        .guild-card a:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 4px;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Improved focus states for better visibility */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         /* Responsive Design */
@@ -735,6 +850,48 @@
             .polymathy-content h3 {
                 font-size: 2rem;
             }
+
+            /* Larger touch targets on mobile */
+            .mobile-menu a {
+                min-height: 48px;
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                min-height: 48px;
+                padding: 16px 28px;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .intelligence-card {
+                border: 3px solid #000;
+            }
+            
+            .btn {
+                border-width: 3px;
+            }
+            
+            .nav-links a:focus {
+                outline-width: 4px;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .floating-element,
+            .intelligence-card,
+            .program-card,
+            .guild-card,
+            .btn {
+                animation: none;
+                transition: none;
+            }
+            
+            .about-image {
+                animation: none;
+            }
         }
 
         /* Animations */
@@ -774,20 +931,25 @@
     </style>
 </head>
 <body>
-    <div class="renaissance-bg">
-        <div class="floating-element">🎨</div>
-        <div class="floating-element">🎵</div>
-        <div class="floating-element">🏃‍♂️</div>
-        <div class="floating-element">📚</div>
-        <div class="floating-element">📐</div>
-        <div class="floating-element">🌿</div>
-        <div class="floating-element">🧠</div>
-        <div class="floating-element">🤝</div>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div class="renaissance-bg" aria-hidden="true">
+        <div class="floating-element" aria-hidden="true">🎨</div>
+        <div class="floating-element" aria-hidden="true">🎵</div>
+        <div class="floating-element" aria-hidden="true">🏃‍♂️</div>
+        <div class="floating-element" aria-hidden="true">📚</div>
+        <div class="floating-element" aria-hidden="true">📐</div>
+        <div class="floating-element" aria-hidden="true">🌿</div>
+        <div class="floating-element" aria-hidden="true">🧠</div>
+        <div class="floating-element" aria-hidden="true">🤝</div>
     </div>
 
-    <header>
-        <nav class="container">
-            <a href="#home" class="logo">🏛️ Polymathy (MI) Academy</a>
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Polymathy Academy - Return to homepage">
+                <span aria-hidden="true">🏛️</span>
+                Polymathy (MI) Academy
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#vision">Vision</a></li>
@@ -796,24 +958,27 @@
                 <li><a href="#iq-testing">IQ Testing</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#guild">Community</a></li>
-                <li><a href="https://www.brainhq.com" target="_blank">🧠 BrainHQ</a></li>
+                <li><a href="https://www.brainhq.com" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">🧠</span> BrainHQ
+                </a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Open mobile menu">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
         </nav>
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-labelledby="mobile-menu-title" aria-hidden="true">
+        <h2 id="mobile-menu-title" class="visually-hidden">Navigation Menu</h2>
         <button class="mobile-close" aria-label="Close mobile menu">×</button>
-        <ul>
-            <li><a href="#home">🏠 Home</a></li>
-            <li><a href="#vision">🎯 Vision</a></li>
-            <li><a href="#intelligences">🧠 Intelligences</a></li>
-            <li><a href="#programs">📚 Programs</a></li>
-            <li><a href="#iq-testing">🧩 IQ Testing</a></li>
-            <li><a href="#about">👥 About</a></li>
-            <li><a href="#guild">🌐 Community</a></li>
-            <li><a href="https://www.brainhq.com" target="_blank">🧠 BrainHQ</a></li>
+        <ul role="list">
+            <li><a href="#home"><span aria-hidden="true">🏠</span> Home</a></li>
+            <li><a href="#vision"><span aria-hidden="true">🎯</span> Vision</a></li>
+            <li><a href="#intelligences"><span aria-hidden="true">🧠</span> Intelligences</a></li>
+            <li><a href="#programs"><span aria-hidden="true">📚</span> Programs</a></li>
+            <li><a href="#iq-testing"><span aria-hidden="true">🧩</span> IQ Testing</a></li>
+            <li><a href="#about"><span aria-hidden="true">👥</span> About</a></li>
+            <li><a href="#guild"><span aria-hidden="true">🌐</span> Community</a></li>
+            <li><a href="https://www.brainhq.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🧠</span> BrainHQ</a></li>
         </ul>
     </div>
 
@@ -821,7 +986,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Polymathy (MI) Academy</h1>
-                <p class="subtitle">Where Knowledge Boundaries Dissolve <span class="renaissance-marker">✨</span> À la Da Vinci</p>
+                <p class="subtitle">Where Knowledge Boundaries Dissolve <span class="renaissance-marker" aria-hidden="true">✨</span> À la Da Vinci</p>
                 <p>Discover the power of polymathic thinking through Rickard & Tan's revolutionary approach to multiple intelligence education, where every learner becomes a Renaissance mind.</p>
                 <div class="cta-buttons">
                     <a href="#intelligences" class="btn btn-primary">Explore Intelligences</a>
@@ -831,7 +996,7 @@
         </div>
     </section>
 
-    <main class="main-content">
+    <main id="main" class="main-content" role="main">
         <section class="section polymathy-intro">
             <div class="container">
                 <div class="polymathy-content">
@@ -857,7 +1022,7 @@
                         
                         <p>We believe that <strong>true AI readiness</strong> isn't about competing with machines, but about developing the uniquely human capacities that AI cannot replicate: cross-domain synthesis, ethical reasoning, creative problem-solving, and the ability to find meaning in complexity. Our graduates will be the polymathic leaders who guide humanity into a future where artificial and human intelligence work in harmony to create unprecedented possibilities.</p>
                     </div>
-                    <div class="about-image">
+                    <div class="about-image" aria-hidden="true">
                         🤖✨🧠
                     </div>
                 </div>
@@ -867,8 +1032,8 @@
         <section id="intelligences" class="section">
             <div class="container">
                 <h2>Eight Intelligence Domains</h2>
-                <div class="intelligences-grid">
-                    <div class="intelligence-card fade-in">
+                <div class="intelligences-grid" role="list">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Artistic Intelligence">🎨</div>
                         <h3>Artistic Intelligence</h3>
                         <p>Master visual expression, design thinking, and creative problem-solving through the language of color, form, and spatial relationships.</p>
@@ -878,9 +1043,9 @@
                             <li>Aesthetic appreciation</li>
                             <li>Visual problem-solving</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Musical Intelligence">🎵</div>
                         <h3>Musical Intelligence</h3>
                         <p>Explore rhythm, melody, and harmonic patterns that reveal mathematical relationships and emotional resonance across cultures.</p>
@@ -890,9 +1055,9 @@
                             <li>Sound pattern recognition</li>
                             <li>Auditory processing</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Kinesthetic Intelligence">🏃‍♂️</div>
                         <h3>Kinesthetic Intelligence</h3>
                         <p>Develop body-mind coordination, physical expression, and hands-on learning that connects movement with understanding.</p>
@@ -902,9 +1067,9 @@
                             <li>Hands-on learning</li>
                             <li>Movement expression</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Linguistic Intelligence">📚</div>
                         <h3>Linguistic Intelligence</h3>
                         <p>Command the power of words, storytelling, and communication to bridge ideas across all domains of knowledge.</p>
@@ -914,9 +1079,9 @@
                             <li>Storytelling</li>
                             <li>Communication skills</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Spatial Intelligence">📐</div>
                         <h3>Spatial Intelligence</h3>
                         <p>Visualize complex relationships, navigate dimensional thinking, and understand how forms interact in space and time.</p>
@@ -926,9 +1091,9 @@
                             <li>Geometric thinking</li>
                             <li>Navigation skills</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Naturalistic Intelligence">🌿</div>
                         <h3>Naturalistic Intelligence</h3>
                         <p>Recognize patterns in nature, understand ecological systems, and apply biological principles to solve human challenges.</p>
@@ -938,9 +1103,9 @@
                             <li>Biological systems</li>
                             <li>Ecological thinking</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Intrapersonal Intelligence">🧠</div>
                         <h3>Intrapersonal Intelligence</h3>
                         <p>Develop deep self-awareness, emotional regulation, and the ability to understand your own thoughts, motivations, and learning patterns.</p>
@@ -950,9 +1115,9 @@
                             <li>Metacognition</li>
                             <li>Personal goal setting</li>
                         </ul>
-                    </div>
+                    </article>
                     
-                    <div class="intelligence-card fade-in">
+                    <article class="intelligence-card fade-in" role="listitem">
                         <div class="intelligence-icon" aria-label="Interpersonal Intelligence">🤝</div>
                         <h3>Interpersonal Intelligence</h3>
                         <p>Master the art of understanding others, building relationships, and collaborating effectively across diverse groups and cultures.</p>
@@ -962,7 +1127,7 @@
                             <li>Communication skills</li>
                             <li>Leadership abilities</li>
                         </ul>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -970,10 +1135,10 @@
         <section id="programs" class="section programs">
             <div class="container">
                 <h2>Innovative Academy Programs</h2>
-                <div class="program-cards">
-                    <div class="program-card">
+                <div class="program-cards" role="list">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>🤖 AI & Future Intelligence Program</h3>
+                            <h3><span aria-hidden="true">🤖</span> AI & Future Intelligence Program</h3>
                             <p>Where Human Intelligence Meets Artificial Intelligence</p>
                         </div>
                         <div class="program-body">
@@ -986,15 +1151,15 @@
                                 <li>Human-AI collaboration projects</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="program-card">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>💻 Renaissance Coding Academy</h3>
+                            <h3><span aria-hidden="true">💻</span> Renaissance Coding Academy</h3>
                             <p>Programming as a Language of Creation</p>
                         </div>
                         <div class="program-body">
-                            <p>Learn coding not just as a technical skill, but as a polymathic tool for artistic expression, scientific discovery, and social impact. From visual art to data storytelling, code becomes your Renaissance brush.</p>
+                            <p>Learn coding not just as technical skill, but as a polymathic tool for artistic expression, scientific discovery, and social impact. From visual art to data storytelling, code becomes your Renaissance brush.</p>
                             <ul class="program-features">
                                 <li>Creative coding for digital art and interactive experiences</li>
                                 <li>Data visualization for naturalistic pattern recognition</li>
@@ -1003,11 +1168,11 @@
                                 <li>Collaborative open-source projects across age groups</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="program-card">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>🎭 Da Vinci Design Studio</h3>
+                            <h3><span aria-hidden="true">🎭</span> Da Vinci Design Studio</h3>
                             <p>Where Art Meets Science</p>
                         </div>
                         <div class="program-body">
@@ -1020,11 +1185,11 @@
                                 <li>Community design challenges with real-world impact</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="program-card">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>🌍 Global Polymaths Exchange</h3>
+                            <h3><span aria-hidden="true">🌍</span> Global Polymaths Exchange</h3>
                             <p>Cultural Intelligence Across Borders</p>
                         </div>
                         <div class="program-body">
@@ -1037,11 +1202,11 @@
                                 <li>Study abroad programs focused on polymathic traditions</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="program-card">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>🧠 Cognitive Enhancement Labs</h3>
+                            <h3><span aria-hidden="true">🧠</span> Cognitive Enhancement Labs</h3>
                             <p>Neuroplasticity in Action</p>
                         </div>
                         <div class="program-body">
@@ -1054,11 +1219,11 @@
                                 <li>Mindfulness practices supporting all intelligence types</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="program-card">
+                    <article class="program-card" role="listitem">
                         <div class="program-header">
-                            <h3>🎵 Polymathic Music Academy</h3>
+                            <h3><span aria-hidden="true">🎵</span> Polymathic Music Academy</h3>
                             <p>The Mathematics of Harmony</p>
                         </div>
                         <div class="program-body">
@@ -1071,7 +1236,7 @@
                                 <li>AI-assisted composition and human creativity</li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1089,53 +1254,53 @@
                         
                         <p>Combined with BrainHQ's neuroplasticity training and our multiple intelligence framework, cognitive assessment becomes not just measurement, but a <strong>pathway to enhancement</strong> and polymathic growth.</p>
                     </div>
-                    <div class="about-image">
+                    <div class="about-image" aria-hidden="true">
                         🧩🧠📊
                     </div>
                 </div>
 
-                <div class="guild-cards">
-                    <div class="guild-card">
-                        <h3>🎯 IQ Matrice</h3>
-                        <p>Professional cognitive assessments designed by André Gangvik, featuring scientifically validated tests for comprehensive cognitive evaluation.</p>
-                        <a href="https://iqmatrice.com" target="_blank" style="background: #e74c3c; color: white;">Take Assessment</a>
-                    </div>
+                <div class="guild-cards" role="list">
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🎯</span> IQ Matrice</h3>
+                        <p>Professional cognitive assessments designed by André Gavin, featuring scientifically validated tests for comprehensive cognitive evaluation.</p>
+                        <a href="https://iqmatrice.com" target="_blank" rel="noopener noreferrer" style="background: #e74c3c; color: white;">Take Assessment</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🌟 ePiq Society</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🌟</span> ePiq Society</h3>
                         <p>Join the electronic society for high-IQ individuals, fostering intellectual discourse and collaborative problem-solving across multiple disciplines.</p>
-                        <a href="https://www.epiq-society.org" target="_blank" style="background: #3498db; color: white;">Join ePiq</a>
-                    </div>
+                        <a href="https://www.epiq-society.org" target="_blank" rel="noopener noreferrer" style="background: #3498db; color: white;">Join ePiq</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🧠 IIS Society</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🧠</span> IIS Society</h3>
                         <p>Connect with the International Intelligence Society, where polymathic thinkers share research and insights on cognitive enhancement.</p>
-                        <a href="https://iisiq.org" target="_blank" style="background: #9b59b6; color: white;">Explore IIS</a>
-                    </div>
+                        <a href="https://iisiq.org" target="_blank" rel="noopener noreferrer" style="background: #9b59b6; color: white;">Explore IIS</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🏛️ ISI Society</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🏛️</span> ISI Society</h3>
                         <p>Discover the International Society for Intelligence, dedicated to advancing our understanding of human cognitive potential.</p>
-                        <a href="https://isi-society.org" target="_blank" style="background: #f39c12; color: white;">Visit ISI</a>
-                    </div>
+                        <a href="https://isi-society.org" target="_blank" rel="noopener noreferrer" style="background: #f39c12; color: white;">Visit ISI</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🧩 Cognitive Puzzles</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🧩</span> Cognitive Puzzles</h3>
                         <p>Challenge yourself with progressive puzzles and brain teasers designed to enhance pattern recognition and logical reasoning.</p>
-                        <a href="#" style="background: #1abc9c; color: white;">Start Puzzles</a>
-                    </div>
+                        <a href="mailto:puzzles@polymathyacademy.com?subject=Access to Cognitive Puzzles&body=Hi! I'm interested in accessing the cognitive puzzles collection. Please send me more information." style="background: #1abc9c; color: white;">Start Puzzles</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>📈 Progress Tracking</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">📈</span> Progress Tracking</h3>
                         <p>Monitor your cognitive development through integrated assessment tools that track growth across multiple intelligence domains.</p>
-                        <a href="#" style="background: #27ae60; color: white;">Track Progress</a>
-                    </div>
+                        <a href="mailto:progress@polymathyacademy.com?subject=Progress Tracking System&body=Hello! I'd like to learn more about the progress tracking system for multiple intelligence development." style="background: #27ae60; color: white;">Track Progress</a>
+                    </article>
                 </div>
 
                 <div style="margin-top: 4rem; text-align: center; padding: 3rem; background: rgba(255, 255, 255, 0.1); border-radius: 20px; backdrop-filter: blur(15px);">
-                    <h3 style="color: #ffd700; margin-bottom: 1.5rem; font-size: 2rem;">Partnership with André Gangvik</h3>
+                    <h3 style="color: #ffd700; margin-bottom: 1.5rem; font-size: 2rem;">Partnership with André Gavin</h3>
                     <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.7;">
-                        We're honored to collaborate with <strong>André Gangvik</strong>, renowned IQ test designer and psychometrician. His scientifically rigorous assessments at IQ Matrice perfectly complement our polymathic approach, providing the cognitive insights needed to optimize your multiple intelligence development journey.
+                        We're honored to collaborate with <strong>André Gavin</strong>, renowned IQ test designer and psychometrician. His scientifically rigorous assessments at IQ Matrice perfectly complement our polymathic approach, providing the cognitive insights needed to optimize your multiple intelligence development journey.
                     </p>
                 </div>
             </div>
@@ -1152,7 +1317,7 @@
                         
                         <p>Together, Rickard and Tan create learning experiences where <strong>artistic vision</strong> informs <strong>scientific inquiry</strong>, where <strong>musical patterns</strong> reveal <strong>mathematical truths</strong>, and where <strong>interpersonal wisdom</strong> enhances <strong>intrapersonal growth</strong>. Their approach transforms education from a collection of separate subjects into a unified exploration of human potential.</p>
                     </div>
-                    <div class="about-image">
+                    <div class="about-image" aria-hidden="true">
                         🎓
                     </div>
                 </div>
@@ -1164,66 +1329,66 @@
                 <h2>Renaissance Learning Community</h2>
                 <p style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Join our global network of polymathic minds, where knowledge seekers of all ages collaborate, create, and inspire one another.</p>
                 
-                <div class="guild-cards">
-                    <div class="guild-card">
-                        <h3>🌟 Student Guild</h3>
+                <div class="guild-cards" role="list">
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🌟</span> Student Guild</h3>
                         <p>Connect with fellow learners, share projects, and participate in collaborative challenges that span multiple disciplines.</p>
-                        <a href="#" style="background: #3498db; color: white;">Join Guild</a>
-                    </div>
+                        <a href="mailto:students@polymathyacademy.com?subject=Join Student Guild&body=Hi! I'm interested in joining the Student Guild. Please send me information about upcoming projects and how to get involved." style="background: #3498db; color: white;">Join Guild</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🎓 Mentor Circle</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🎓</span> Mentor Circle</h3>
                         <p>Learn from experienced polymaths and contribute your own expertise to guide the next generation of Renaissance minds.</p>
-                        <a href="#" style="background: #e74c3c; color: white;">Become Mentor</a>
-                    </div>
+                        <a href="mailto:mentors@polymathyacademy.com?subject=Become a Mentor&body=Hello! I'm interested in becoming a mentor in the Polymathy Academy. I'd like to learn more about the mentorship program and how I can contribute." style="background: #e74c3c; color: white;">Become Mentor</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>👨‍👩‍👧‍👦 Family Learning</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">👨‍👩‍👧‍👦</span> Family Learning</h3>
                         <p>Engage in intergenerational learning experiences that strengthen family bonds while developing multiple intelligences together.</p>
-                        <a href="#" style="background: #27ae60; color: white;">Family Programs</a>
-                    </div>
+                        <a href="mailto:families@polymathyacademy.com?subject=Family Learning Programs&body=Hi! Our family is interested in the intergenerational learning programs. Could you send us information about upcoming family sessions?" style="background: #27ae60; color: white;">Family Programs</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🏢 Corporate Partnerships</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🏢</span> Corporate Partnerships</h3>
                         <p>Bring polymathic thinking to your organization through executive education and innovation workshops.</p>
-                        <a href="#" style="background: #f39c12; color: white;">Partner With Us</a>
-                    </div>
+                        <a href="mailto:corporate@polymathyacademy.com?subject=Corporate Partnership Inquiry&body=Hello! We're interested in exploring corporate partnerships with Polymathy Academy. Please send information about executive education programs and innovation workshops." style="background: #f39c12; color: white;">Partner With Us</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🔬 Research Collaborative</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🔬</span> Research Collaborative</h3>
                         <p>Participate in cutting-edge research on neuroplasticity, multiple intelligences, and cross-disciplinary learning.</p>
-                        <a href="#" style="background: #9b59b6; color: white;">Join Research</a>
-                    </div>
+                        <a href="mailto:research@polymathyacademy.com?subject=Research Collaboration&body=Hi! I'm interested in participating in research on neuroplasticity and multiple intelligences. Please send me information about current and upcoming research opportunities." style="background: #9b59b6; color: white;">Join Research</a>
+                    </article>
                     
-                    <div class="guild-card">
-                        <h3>🌐 Global Network</h3>
+                    <article class="guild-card" role="listitem">
+                        <h3><span aria-hidden="true">🌐</span> Global Network</h3>
                         <p>Connect with polymaths worldwide through virtual events, cultural exchanges, and collaborative projects.</p>
-                        <a href="#" style="background: #1abc9c; color: white;">Go Global</a>
-                    </div>
+                        <a href="mailto:global@polymathyacademy.com?subject=Global Network Membership&body=Hello! I'm interested in joining the global polymath network. Please send me information about virtual events, cultural exchanges, and collaborative projects." style="background: #1abc9c; color: white;">Go Global</a>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="background: #1a237e; color: white; padding: 3rem 0; text-align: center;">
+    <footer style="background: #1a237e; color: white; padding: 3rem 0; text-align: center;" role="contentinfo">
         <div class="container">
-            <h3 style="color: #ffd700; margin-bottom: 1rem; font-family: 'Georgia', serif;">🏛️ Polymathy (MI) Academy</h3>
+            <h3 style="color: #ffd700; margin-bottom: 1rem; font-family: 'Georgia', serif;"><span aria-hidden="true">🏛️</span> Polymathy (MI) Academy</h3>
             <p style="margin-bottom: 2rem; opacity: 0.9;">Where Knowledge Boundaries Dissolve • À la Da Vinci</p>
             <p style="opacity: 0.7;">© 2025 Polymathy Academy. Empowering Renaissance minds through integrated intelligence education.</p>
             <div style="margin-top: 2rem;">
-                <a href="https://www.brainhq.com" target="_blank" style="color: #ffd700; text-decoration: none; margin: 0 1rem; transition: all 0.3s ease;">🧠 Powered by BrainHQ Research</a>
-                <span style="opacity: 0.5;">|</span>
-                <a href="https://iqmatrice.com" target="_blank" style="color: #ffd700; text-decoration: none; margin: 0 1rem;">🎯 IQ Matrice Partner</a>
-                <span style="opacity: 0.5;">|</span>
-                <a href="#" style="color: #ffd700; text-decoration: none; margin: 0 1rem;">Contact</a>
-                <span style="opacity: 0.5;">|</span>
-                <a href="#" style="color: #ffd700; text-decoration: none; margin: 0 1rem;">Privacy</a>
+                <a href="https://www.brainhq.com" target="_blank" rel="noopener noreferrer" style="color: #ffd700; text-decoration: none; margin: 0 1rem; transition: all 0.3s ease;"><span aria-hidden="true">🧠</span> Powered by BrainHQ Research</a>
+                <span style="opacity: 0.5;" aria-hidden="true">|</span>
+                <a href="https://iqmatrice.com" target="_blank" rel="noopener noreferrer" style="color: #ffd700; text-decoration: none; margin: 0 1rem;"><span aria-hidden="true">🎯</span> IQ Matrice Partner</a>
+                <span style="opacity: 0.5;" aria-hidden="true">|</span>
+                <a href="mailto:contact@polymathyacademy.com?subject=Contact Polymathy Academy&body=Hello! I'd like to get in touch with the Polymathy Academy team." style="color: #ffd700; text-decoration: none; margin: 0 1rem;">Contact</a>
+                <span style="opacity: 0.5;" aria-hidden="true">|</span>
+                <a href="mailto:privacy@polymathyacademy.com?subject=Privacy Policy Request&body=Hi! I'd like to request information about your privacy policy and data handling practices." style="color: #ffd700; text-decoration: none; margin: 0 1rem;">Privacy</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu functionality
+        // Mobile menu functionality with ARIA support
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileClose = document.querySelector('.mobile-close');
@@ -1231,12 +1396,22 @@
 
         function openMobileMenu() {
             mobileMenu.classList.add('active');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            mobileToggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
+            
+            // Focus management
+            mobileClose.focus();
         }
 
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            mobileToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+            
+            // Return focus to toggle button
+            mobileToggle.focus();
         }
 
         mobileToggle.addEventListener('click', openMobileMenu);
@@ -1265,11 +1440,15 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Focus the target for screen readers
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
                 }
             });
         });
 
-        // Add fade-in animation on scroll
+        // Add fade-in animation on scroll with reduced motion support
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -1283,14 +1462,16 @@
             });
         }, observerOptions);
 
-        // Observe all intelligence cards and program cards
-        document.querySelectorAll('.intelligence-card, .program-card').forEach(card => {
-            observer.observe(card);
-        });
+        // Only observe if user doesn't prefer reduced motion
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.intelligence-card, .program-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
 
-        // Dynamic text animation for hero subtitle
+        // Dynamic text animation for hero subtitle with reduced motion support
         const subtitle = document.querySelector('.hero .subtitle');
-        if (subtitle) {
+        if (subtitle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             setInterval(() => {
                 subtitle.style.textShadow = `0 0 ${Math.random() * 20 + 10}px #ffd700`;
             }, 2000);
@@ -1315,18 +1496,76 @@
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${current}`) {
                         link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.removeAttribute('aria-current');
                     }
                 });
                 lastScroll = now;
             }
         });
 
-        // Keyboard navigation support
+        // Enhanced keyboard navigation support
         document.addEventListener('keydown', (e) => {
+            // Close mobile menu with Escape key
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                 closeMobileMenu();
             }
+            
+            // Trap focus in mobile menu when open
+            if (mobileMenu.classList.contains('active')) {
+                const focusableElements = mobileMenu.querySelectorAll('button, a');
+                const firstFocusable = focusableElements[0];
+                const lastFocusable = focusableElements[focusableElements.length - 1];
+                
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                            e.preventDefault();
+                            lastFocusable.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusable) {
+                            e.preventDefault();
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+            }
         });
+
+        // Announce dynamic content changes to screen readers
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.classList.add('visually-hidden');
+            announcement.textContent = message;
+            
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+        // Announce when sections come into view
+        if (observer) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionTitle = entry.target.querySelector('h2, h3');
+                        if (sectionTitle) {
+                            announceToScreenReader(`Now viewing: ${sectionTitle.textContent}`);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('section[id]').forEach(section => {
+                sectionObserver.observe(section);
+            });
+        }
     </script>
 </body>
 </html>
